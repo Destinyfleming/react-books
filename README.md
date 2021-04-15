@@ -27,4 +27,4 @@ Here is the search page
 
 .... And here is the Saved Page
 
-![Screenshot](/imgs/react-books-saved "Saved Page")
+![Screenshot](/imgs/react-books-saved.png "Saved Page")
