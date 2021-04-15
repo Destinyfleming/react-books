@@ -74,7 +74,9 @@ const Saved = () => {
                </p>
             </Container> 
             </Jumbotron> 
-            {savedBook[0] ? exampleBookCard : <h1></h1>}
+            <Container>
+              {exampleBookCard}
+            </Container>
         </div>
         
     )
