@@ -16,7 +16,7 @@ function App() {
               <Saved />
               </Route>
 
-              <Route path="/search">
+              <Route path="/">
               <Search />
               </Route>
             </Switch>
