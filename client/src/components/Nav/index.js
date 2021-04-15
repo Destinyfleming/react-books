@@ -1,15 +1,17 @@
 import React from "react";
+import { Container ,Navbar, NavDropdown } from 'react-bootstrap';
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <Navbar bg="dark" variant="dark">
       <a className="navbar-brand" href="/">
-        Google Books Search
+        Search
       </a>
       <a className="navbar-brand" href="/saved">
-        Saved Books
+        Saved
       </a>
-    </nav>
+      <Navbar.Brand className= "ml-auto">Google Book Search</Navbar.Brand>
+  </Navbar>
   );
 }
 

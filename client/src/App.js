@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Books from "./pages/Books";
-import Saved from "./pages/Saved";
 import Search from "./pages/Search";
+import Saved from "./pages/Saved";
 import Nav from "./components/Nav";
 
 function App() {
@@ -10,7 +9,7 @@ function App() {
     <div>
       <Router>
           <div>
-          <Nav />
+         <Nav/>
             <Switch>
               <Route path="/saved">
               <Saved />
