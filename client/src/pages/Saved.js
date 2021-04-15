@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import API from '../utils/API';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Container, Jumbotron } from 'react-bootstrap';
+import "./Search.css"
 
 const Saved = () => {
 
@@ -13,7 +14,7 @@ const Saved = () => {
         response.data.map(item => {
             list.push({
                 title: item.title,
-                authors: item.authors,
+                author: item.authors,
                 desciption: item.description,
                 image: item.image,
                 link: item.link,
@@ -36,11 +37,11 @@ const Saved = () => {
 
 
     const bookCard = savedBook.map((book)=>(
-      <Card style={{ width: '18rem' }} key={book.id}>
+      <Card style={{ width: '18rem'}} className="book-card" key={book.id}>
       <Card.Img variant="top" src={book.image} />
       <Card.Body>
         <Card.Title>{book.title}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">{book.authors}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">{book.author}</Card.Subtitle>
           <Card.Text>
           {book.desciption}
           </Card.Text>
@@ -53,7 +54,14 @@ const Saved = () => {
 
     return (
         <div>
-            <h1>Here Are Your Saved Books!</h1>
+            <Jumbotron fluid>
+            <Container className="search-jumbtron">
+              <h1 style={{ textAlign: 'center'}} >Here Are Your Saved Books!</h1>
+              <p style={{ textAlign: 'center'}}>
+                  Click the buttons below to view or delete them!
+               </p>
+            </Container> 
+            </Jumbotron> 
             {savedBook[0] ? bookCard : <h1>No Saved Books!</h1>}
         </div>
         

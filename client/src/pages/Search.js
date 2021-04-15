@@ -4,18 +4,17 @@ import { Card, Jumbotron, Container, Form, Col, Row, Button } from 'react-bootst
 import "./Search.css"
 
 function Search(){
-  const [searchVal, setSearchVal] = useState("")
+  const [search, setsearch] = useState("")
     const [searchResults, updateSearchResults] = useState([])
 
     const handleInputChange = (e) => {
-        setSearchVal(e.target.value);
+        setsearch(e.target.value);
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.get('https://www.googleapis.com/books/v1/volumes?q=' + searchVal)
+        axios.get('https://www.googleapis.com/books/v1/volumes?q=' + search)
             .then(function (response) {
-            // handle success
                 console.log(response.data.items)
                 updateSearchResults(response.data.items);
             })
@@ -37,7 +36,7 @@ function Search(){
              <Form>
              <Row>
              <Col>
-                <Form.Control value={searchVal} onChange={handleInputChange} placeholder="Title ot Author" />
+                <Form.Control value={search} onChange={handleInputChange} placeholder="Title or Author" />
              </Col>
              </Row>
              </Form>
@@ -54,11 +53,11 @@ function Search(){
                      <Card.Text>
                      {volume.volumeInfo.description}
                      </Card.Text>
-                     <Card.Link href= {volume.volumeInfo.infoLink} >Check Me Out!</Card.Link>
+                     <Button href= {volume.volumeInfo.infoLink} variant="secondary">Check Me Out!</Button>
                   </Card.Body>
                   </Card>
                   )
-            }) : <h1>No Results Yet</h1>}
+            }) : <h1></h1>}
         </div>
     </div>
     )
