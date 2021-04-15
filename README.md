@@ -22,4 +22,9 @@ A user can user this app for so many book related things. This app could help th
     *Google Books API
 ## Screenshot
 
+Here is the search page
 ![Screenshot](/imgs/react-books-search.png "Search Page")
+
+.... And here is the Saved Page
+
+![Screenshot](/imgs/react-books-saved "Saved Page")
