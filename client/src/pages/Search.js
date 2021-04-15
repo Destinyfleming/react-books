@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Card, Jumbotron, Container, Form, Col, Row, Button } from 'react-bootstrap';
-import "./Search.css"
+import "./pages.css"
 
 function Search(){
   const [search, setsearch] = useState("")

@@ -11,6 +11,7 @@ function App() {
           <div>
          <Nav/>
             <Switch>
+
               <Route path="/saved">
               <Saved />
               </Route>
@@ -18,6 +19,7 @@ function App() {
               <Route path="/">
               <Search />
               </Route>
+              
             </Switch>
             </div>
       </Router>

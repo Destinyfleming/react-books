@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import API from '../utils/API';
 import { Button, Card, Container, Jumbotron } from 'react-bootstrap';
-import "./Search.css"
+import "./pages.css"
 
 const Saved = () => {
 
