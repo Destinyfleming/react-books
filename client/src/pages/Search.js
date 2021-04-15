@@ -7,11 +7,11 @@ function Search(){
   const [search, setsearch] = useState("")
     const [searchResults, updateSearchResults] = useState([])
 
-    const handleInputChange = (e) => {
+    function handleInputChange(e){
         setsearch(e.target.value);
     }
 
-    const handleSubmit = (event) => {
+    function handleSubmit(event){
         event.preventDefault();
         axios.get('https://www.googleapis.com/books/v1/volumes?q=' + search)
             .then(function (response) {
@@ -21,6 +21,10 @@ function Search(){
             .catch(function (error) {
                 console.log(error);
     })
+    }
+    
+    function saveFunction(){
+        //save book val to db
     }
 
     return (
@@ -41,6 +45,7 @@ function Search(){
              </Row>
              </Form>
              <Button onClick={handleSubmit} variant="warning" size="lg" block>Enter</Button>
+
         </Jumbotron>    
         <div>
             {searchResults[0] ? searchResults.map(volume => {
@@ -54,6 +59,7 @@ function Search(){
                      {volume.volumeInfo.description}
                      </Card.Text>
                      <Button href= {volume.volumeInfo.infoLink} variant="secondary">Check Me Out!</Button>
+                     <Button onClick={saveFunction} variant="secondary">Save!</Button>
                   </Card.Body>
                   </Card>
                   )
